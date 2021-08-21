@@ -1,24 +1,27 @@
 {
-  "name": "zombie-garden",
-  "version": "1.0.0",
-  "description": "A regular day in the zombie garden",
-  "private": true,
-  "main": "bin/www.js",
-  "scripts": {
-    "start": "nodemon ./bin/www",
-    
-    "build-db": "sudo docker build -t zombies-db .",
-    "start-db": "sudo docker run -d -p 3306:3306 zombies-db > .zombies-db-cid",
-    "stop-db": "sudo docker stop `cat .zombies-db-cid`"
-  },
-  "dependencies": {
-    "connect-flash": "^0.1.1",
-    "express": "~4.17.1",
-    "express-session": "^1.17.2",
-    "hbs": "~4.1.2",
-    "method-override": "^3.0.0",
-    "morgan": "~1.10.0",
-    "mysql2": "^2.3.0"
-  },
-  "type": "module"
+    "name": "zombie-garden",
+    "version": "1.0.0",
+    "description": "A regular day in the zombie garden",
+    "private": true,
+    "main": "bin/www.js",
+    "scripts": {
+        "dev": "node --inspect-brk bin/www.js",
+        "start": "nodemon ./bin/www",
+        "build-db": "sudo docker build -t zombies-db .",
+        "start-db": "sudo docker run -d -p 3306:3306 zombies-db > .zombies-db-cid",
+        "stop-db": "sudo docker stop `cat .zombies-db-cid`"
+    },
+    "dependencies": {
+        "connect-flash": "^0.1.1",
+        "express": "~4.17.1",
+        "express-session": "^1.17.2",
+        "hbs": "~4.1.2",
+        "method-override": "^3.0.0",
+        "morgan": "~1.10.0",
+        "mysql2": "^2.3.0"
+    },
+    "type": "module",
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    }
 }

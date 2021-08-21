@@ -23,7 +23,7 @@ import zombies from './routes/zombies.js'
 
 
 const app = express()
-const __dirname = new URL('.', import.meta.url).pathname
+const __dirname = "./";
 
 // configura a pasta que contém as views e o handlebars como templating engine
 app.set('views', `${__dirname}/views`)
